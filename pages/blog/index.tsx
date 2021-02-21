@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-import { GetStaticPathsResult } from 'next'
 import Link from 'next/link'
 import dayjs from 'dayjs'
 import readingTime from 'reading-time'
@@ -43,20 +41,5 @@ export const getStaticProps = (): any => {
 
   return {
     props: { blogs },
-  }
-}
-
-export function getStaticPaths(): GetStaticPathsResult {
-  const blogs: BlogInfo[] = getAllBlogs()
-
-  return {
-    paths: blogs.map((blog) => {
-      return {
-        params: {
-          slug: blog.title,
-        },
-      }
-    }),
-    fallback: 'blocking',
   }
 }
