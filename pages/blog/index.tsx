@@ -12,8 +12,8 @@ interface BlogProp {
 const BlogIndex = ({ blogs }: BlogProp): JSX.Element => {
   return (
     <PageLayout>
-      {blogs.map(({ snippet, timestamp, title, content }: BlogInfo) => (
-        <Link href="/blog/mdx-ftw" key={timestamp}>
+      {blogs.map(({ snippet, timestamp, title, content, slug }: BlogInfo) => (
+        <Link href={`/blog/${slug}`} key={timestamp}>
           <div className="blog-card">
             <h1 className="text-gray-500 text-xs leading-normal mb-2">
               {title}

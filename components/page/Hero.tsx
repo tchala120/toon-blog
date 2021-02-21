@@ -21,7 +21,7 @@ export default function Hero(): JSX.Element {
         hoverBg="bg-yellow-500"
         title="Blogs"
         icon="📖"
-        onClick={goToBlogPage}
+        onClick={() => goToBlogPage()}
       />
     </div>
   )

@@ -3,15 +3,12 @@ import { join } from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
 
-type Items = {
-  [key: string]: string
-}
-
-export interface BlogInfo extends Items {
+export interface BlogInfo {
   title: string
   timestamp: string
   snippet: string
   content: string
+  slug: string
 }
 
 const blogPath = join(process.cwd(), 'pages/blog')
