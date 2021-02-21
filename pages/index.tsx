@@ -1,40 +1,36 @@
-import { Demonstration } from '@/components/blog/Demonstration'
-import Head from 'next/head'
+import PageLayout from '@/layouts/page-layout'
+import About from '@/components/page/About'
+import Hero from '@/components/page/Hero'
 
 export const Home = (): JSX.Element => (
-  <div className="container">
-    <Head>
-      <title>Toon Blog | Panupong Tipjoi</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-
-    <Demonstration />
-
-    <style jsx>{`
-      .container {
-        min-height: 100vh;
-        padding: 0 0.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-    `}</style>
-
-    <style jsx global>{`
-      html,
-      body {
-        padding: 0;
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-    `}</style>
-  </div>
+  <>
+    <PageLayout isHaveFooter={false}>
+      <Hero />
+      <About />
+    </PageLayout>
+    <div className="bg-yellow-400 w-full h-24 flex justify-center items-center relative overflow-hidden">
+      <img
+        src="/assets/github-repo-1.svg"
+        alt="circle 1"
+        className="w-3/6 transform translate-y-20"
+      />
+      <img
+        src="/assets/github-repo-2.svg"
+        alt="circle 1"
+        className="w-2/6 transform -translate-y-20"
+      />
+      <a
+        href="https://github.com/tchala120"
+        className="absolute z-10 text-xl font-bold text-center text-black cursor-pointer"
+      >
+        <h1>For more information. Check my Github</h1>
+      </a>
+    </div>
+    <PageLayout isHaveMenu={false}>
+      <Hero />
+      <About />
+    </PageLayout>
+  </>
 )
 
 export default Home

@@ -11,7 +11,6 @@ interface BlogProp {
 }
 
 const BlogIndex = ({ blogs }: BlogProp): JSX.Element => {
-  console.log('Blogs', blogs)
   return (
     <PageLayout>
       {blogs.map(({ snippet, timestamp, title }: BlogInfo) => (
