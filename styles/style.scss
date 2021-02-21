@@ -41,7 +41,7 @@ body {
 }
 
 .other {
-  height: 50vh;
+  min-height: 100vh;
 
   @apply flex flex-col justify-center items-center;
 }

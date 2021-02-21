@@ -19,8 +19,6 @@ export interface Children {
   children: ReactNode
 }
 
-const isServer = typeof window === undefined
-
 const Layout = ({ frontMatter, children }: Children): JSX.Element => {
   const onBackToPreviousPage = () => {
     Router.back()
@@ -34,18 +32,18 @@ const Layout = ({ frontMatter, children }: Children): JSX.Element => {
           description={frontMatter.snippet}
         />
         <Menu />
-        {isServer && Router.pathname !== '/' && (
-          <h1
-            onClick={() => onBackToPreviousPage()}
-            className="container font-semibold mb-4 underline cursor-pointer"
-          >
-            &#8592; Back
-          </h1>
-        )}
+        <h1
+          onClick={() => onBackToPreviousPage()}
+          className="container font-semibold mb-4 underline cursor-pointer"
+        >
+          &#8592; Back
+        </h1>
         <div className={cn(style.container, 'container')}>
-          <h1>{frontMatter.title}</h1>
-          <p>{frontMatter.snippet}</p>
-          <section>{children}</section>
+          <h1 className="font-bold text-sm my-8">{frontMatter.title}</h1>
+          <p className="text-lg my-8">{frontMatter.snippet}</p>
+          <section className="py-4 border-t-2 border-gray-300">
+            {children}
+          </section>
         </div>
       </div>
       <div className="border-t-2 p-4">

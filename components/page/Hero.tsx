@@ -1,6 +1,6 @@
 import Router from 'next/router'
 import React from 'react'
-import Button from '../button/Button'
+import Button from '../ui/Button'
 import Template from './Template'
 
 export default function Hero(): JSX.Element {

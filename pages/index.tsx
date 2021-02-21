@@ -1,6 +1,8 @@
 import PageLayout from '@/layouts/page-layout'
 import About from '@/components/page/About'
 import Hero from '@/components/page/Hero'
+import Project from '@/components/page/Project'
+import Footer from '@/components/footer/Footer'
 
 export const Home = (): JSX.Element => (
   <>
@@ -23,13 +25,18 @@ export const Home = (): JSX.Element => (
         href="https://github.com/tchala120"
         className="absolute z-10 text-xl font-bold text-center text-black cursor-pointer"
       >
-        <h1>For more information. Check my Github</h1>
+        <h1>
+          Checkout my <span className="text-gray-100">Github</span> for more
+          information.
+        </h1>
       </a>
     </div>
-    <PageLayout isHaveMenu={false}>
-      <Hero />
-      <About />
+    <PageLayout isHaveMenu={false} isFullHeight={false} isHaveFooter={false}>
+      <Project />
     </PageLayout>
+    <div className="border-t-2 p-4">
+      <Footer />
+    </div>
   </>
 )
 
