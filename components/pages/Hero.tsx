@@ -1,12 +1,7 @@
-import Router from 'next/router'
 import React from 'react'
-import Button from '../ui/Button'
 import Template from './Template'
 
 export default function Hero(): JSX.Element {
-  const goToBlogPage = () => {
-    Router.push('/blog')
-  }
   return (
     <div className="hero">
       <Template
@@ -15,13 +10,6 @@ export default function Hero(): JSX.Element {
         time. My career goal is to become a website developer as my passion lies
         in coding."
         icon={<span className="waving-animate">👋 </span>}
-      />
-      <Button
-        bg="bg-yellow-400"
-        hoverBg="bg-yellow-500"
-        title="Blogs"
-        icon="📖"
-        onClick={() => goToBlogPage()}
       />
     </div>
   )

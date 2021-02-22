@@ -1,7 +1,7 @@
 import PageLayout from '@/layouts/page-layout'
-import About from '@/components/page/About'
-import Hero from '@/components/page/Hero'
-import Project from '@/components/page/Project'
+import About from '@/components/pages/About'
+import Hero from '@/components/pages/Hero'
+import Project from '@/components/pages/Project'
 import Footer from '@/components/footer/Footer'
 
 export const Home = (): JSX.Element => (
