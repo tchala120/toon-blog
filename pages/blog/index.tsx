@@ -13,7 +13,7 @@ interface BlogListProp {
 const BlogIndex = ({ blogs }: BlogListProp): JSX.Element => {
   console.log('Blog list', blogs)
   return (
-    <PageLayout>
+    <PageLayout isFullHeight isHaveFooter isHaveMenu>
       {blogs.map(({ excerpt, timestamp, title, content, slug }: BlogInfo) => (
         <Link href={`/blog/${slug}`} key={timestamp}>
           <div className="blog-card">

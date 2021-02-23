@@ -4,8 +4,10 @@ type Props = {
 
 export default function BlogBody({ content }: Props): JSX.Element {
   return (
-    <div className="max-w-2xl py-10 mx-auto">
-      <div className="markdown" dangerouslySetInnerHTML={{ __html: content }} />
+    <div className="container">
+      <div className="max-w-2xl py-10 mx-auto">
+        <div className="markdown" dangerouslySetInnerHTML={{ __html: content }} />
+      </div>
     </div>
   )
 }
