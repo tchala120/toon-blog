@@ -1,41 +1,54 @@
-/* eslint-disable no-console */
-import { join } from 'path'
 import fs from 'fs'
+import { join } from 'path'
 import matter from 'gray-matter'
 
-export interface BlogInfo {
-  title: string
-  timestamp: string
-  snippet: string
-  content: string
-  slug: string
+interface Url {
+  url: string
 }
 
-const blogPath = join(process.cwd(), 'pages/blog')
+interface Author {
+  name: string
+  picture: string
+  ogImage: Url
+  link: string
+}
 
-export const getAllBlogs = (): BlogInfo[] => {
-  const mdxFiles = fs.readdirSync(blogPath).filter((f) => f.endsWith('mdx'))
+export interface BlogInfo {
+  slug?: string
+  title?: string
+  timestamp?: number
+  excerpt?: string
+  coverImage?: string
+  content?: string
+  author?: Author
+}
 
-  const blogs = mdxFiles
-    .map((slug) => getBlogBySlug(slug))
-    .sort((a, b) => (a.timestamp > b.timestamp ? -1 : 1))
+const blogsDirectory = join(process.cwd(), 'contents/blogs')
 
-  return blogs
+export function getBlogSlugs(): any {
+  return fs.readdirSync(blogsDirectory)
 }
 
 export function getBlogBySlug(slug: string): BlogInfo {
-  const realSlug = slug.replace(/\.mdx$/, '')
-  const fullPath = join(blogPath, `${realSlug}.mdx`)
+  const realSlug = slug.replace(/\.md$/, '')
+  const fullPath = join(blogsDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
-  const items: BlogInfo = {
-    slug: realSlug,
+  const items = {
+    ...data,
     content,
-    title: data.title,
-    timestamp: data.timestamp,
-    snippet: data.snippet,
+    slug: realSlug,
   }
 
   return items
+}
+
+export function getAllBlogs(): BlogInfo[] {
+  const slugs = getBlogSlugs()
+  const blogs = slugs
+    .map((slug: string) => getBlogBySlug(slug))
+    // sort blogs by date in descending order
+    .sort((a: BlogInfo, b: BlogInfo) => (a.timestamp > b.timestamp ? -1 : 1))
+  return blogs
 }
