@@ -1,5 +1,5 @@
 .markdown {
-  @apply leading-loose;
+  @apply leading-loose text-xl;
 }
 
 .markdown p,
@@ -10,13 +10,34 @@
 }
 
 .markdown h1 {
-  @apply text-2xl;
+  @apply text-3xl;
 }
 
 .markdown h2 {
-  @apply text-xl mt-12 mb-4 leading-snug;
+  @apply text-2xl mt-12 mb-4 leading-snug;
 }
 
 .markdown h3 {
-  @apply text-lg mt-8 mb-4 leading-snug;
+  @apply text-xl mt-8 mb-4 leading-snug;
+}
+
+.markdown blockquote {
+  @apply bg-gray-200 border-l-8 border-gray-700 px-4 py-1;
+}
+
+@media (max-width: 768px) {
+  .markdown {
+    @apply text-base leading-10;
+  }
+  .markdown h1 {
+    @apply text-2xl;
+  }
+
+  .markdown h2 {
+    @apply text-xl mt-12 mb-4 leading-snug;
+  }
+
+  .markdown h3 {
+    @apply text-lg mt-8 mb-4 leading-snug;
+  }
 }
