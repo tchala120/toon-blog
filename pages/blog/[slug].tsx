@@ -6,6 +6,7 @@ import { GetStaticPathsResult, GetStaticPropsResult } from 'next'
 import markdownToHtml from '@/libs/markdownToHtml'
 import BlogHeader from '@/components/blog/BlogHeader'
 import BlogBody from '@/components/blog/BlogBody'
+import BlogFooter from '@/components/blog/BlogFooter'
 
 interface BlogProp {
   blog: BlogInfo
@@ -16,7 +17,12 @@ export default function Blog({ blog }: BlogProp): JSX.Element {
   return (
     <BlogLayout title={`${blog.title} | Panupong Tipjoi`} excerpt={blog.excerpt}>
       <BlogHeader {...data} />
-      <BlogBody content={content} />
+      <div className="blog-body-block">
+        <div className="container">
+          <BlogBody content={content} />
+          <BlogFooter author={data.author} />
+        </div>
+      </div>
     </BlogLayout>
   )
 }
