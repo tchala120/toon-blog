@@ -6,10 +6,10 @@ import { formatDate } from 'utils/formatter'
 export default function BlogHeader({ title, excerpt, coverImage, timestamp, author }: BlogInfo): JSX.Element {
   return (
     <div>
-      <div className="container py-10">
-        <h1 className="font-bold text-3xl mb-4">{title}</h1>
+      <div className="blog-header py-10">
+        <h1 className="font-bold text-xl sm:text-3xl mb-4">{title}</h1>
         <div className="flex items-center">
-          <p className="text-sm text-gray-400">{formatDate(timestamp)}</p>
+          <p className="text-xs sm:text-sm text-gray-400">{formatDate(timestamp, 'DD MMM YY | HH:mm')}</p>
           <div className="flex items-center">
             <div className="author-image-block">
               <img src={author.picture} alt={author.name} />
