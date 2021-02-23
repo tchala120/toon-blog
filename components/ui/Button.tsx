@@ -5,8 +5,8 @@ interface ButtonProp {
   icon?: string
   bg: string
   hoverBg: string
-  text: string
-  hoverText: string
+  text?: string
+  hoverText?: string
   onClick: () => void
 }
 
