@@ -5,7 +5,7 @@ import Footer from '@/components/footer/Footer'
 
 interface PageLayoutProp {
   children: ReactNode
-  className: string
+  className?: string
   isHaveMenu?: boolean
   isHaveFooter?: boolean
   isFullHeight?: boolean
