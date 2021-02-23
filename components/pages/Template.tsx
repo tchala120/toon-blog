@@ -6,11 +6,7 @@ interface TemplateProp {
   content: string
 }
 
-export default function Template({
-  title,
-  icon,
-  content,
-}: TemplateProp): JSX.Element {
+export default function Template({ title, icon, content }: TemplateProp): JSX.Element {
   return (
     <>
       <h1 className="text-yellow-400 font-extrabold text-4xl sm:text-5xl pb-8">

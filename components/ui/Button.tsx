@@ -8,13 +8,7 @@ interface ButtonProp {
   onClick: () => void
 }
 
-export default function Button({
-  title,
-  icon,
-  bg,
-  hoverBg,
-  onClick,
-}: ButtonProp): JSX.Element {
+export default function Button({ title, icon, bg, hoverBg, onClick }: ButtonProp): JSX.Element {
   return (
     <button
       onClick={onClick}

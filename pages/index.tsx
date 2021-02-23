@@ -11,23 +11,14 @@ export const Home = (): JSX.Element => (
       <About />
     </PageLayout>
     <div className="bg-yellow-400 w-full h-24 flex justify-center items-center relative overflow-hidden">
-      <img
-        src="/assets/github-repo-1.svg"
-        alt="circle 1"
-        className="w-3/6 transform translate-y-20"
-      />
-      <img
-        src="/assets/github-repo-2.svg"
-        alt="circle 1"
-        className="w-2/6 transform -translate-y-20"
-      />
+      <img src="/assets/github-repo-1.svg" alt="circle 1" className="w-3/6 transform translate-y-20" />
+      <img src="/assets/github-repo-2.svg" alt="circle 1" className="w-2/6 transform -translate-y-20" />
       <a
         href="https://github.com/tchala120"
         className="absolute z-10 text-xl font-bold text-center text-black cursor-pointer"
       >
         <h1>
-          Checkout my <span className="text-gray-100">Github</span> for more
-          information.
+          Checkout my <span className="text-gray-100">Github</span> for more information.
         </h1>
       </a>
     </div>

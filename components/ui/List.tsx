@@ -15,12 +15,7 @@ interface ListProp {
   url: string
 }
 
-export default function List({
-  img,
-  name,
-  status,
-  url,
-}: ListProp): JSX.Element {
+export default function List({ img, name, status, url }: ListProp): JSX.Element {
   const renderStatusTag = (status: Status): JSX.Element => {
     switch (status) {
       case Status.NOT_FINISH:
@@ -48,9 +43,7 @@ export default function List({
     <Link href={url}>
       <div className="bg-gray-100 shadow-2xl transform scale-100 hover:scale-105 p-8 rounded-xl flex flex-col justify-center items-center cursor-pointer transition-all duration-300">
         <img src={img} alt={name} className="w-4/6" />
-        <h1 className="font-extrabold text-xl text-yellow-400 text-center">
-          {name}
-        </h1>
+        <h1 className="font-extrabold text-xl text-yellow-400 text-center">{name}</h1>
         {renderStatusTag(status)}
       </div>
     </Link>
