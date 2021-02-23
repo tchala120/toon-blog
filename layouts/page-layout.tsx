@@ -5,6 +5,7 @@ import Footer from '@/components/footer/Footer'
 
 interface PageLayoutProp {
   children: ReactNode
+  className: string
   isHaveMenu?: boolean
   isHaveFooter?: boolean
   isFullHeight?: boolean
@@ -12,6 +13,7 @@ interface PageLayoutProp {
 
 export default function PageLayout({
   children,
+  className,
   isHaveMenu = true,
   isHaveFooter = true,
   isFullHeight = true,
@@ -21,7 +23,7 @@ export default function PageLayout({
       <Header title="Blog | Panupong Tipjoi" description="This page is show all blogs." />
       <div className={`flex flex-col ${isFullHeight ? `flex-1` : ``}`}>
         {isHaveMenu && <Menu />}
-        <main className="container">{children}</main>
+        <main className={`container ${className || ''}`}>{children}</main>
       </div>
       {isHaveFooter && (
         <div className="border-t-2 p-4">
