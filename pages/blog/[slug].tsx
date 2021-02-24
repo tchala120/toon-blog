@@ -8,6 +8,8 @@ import BlogHeader from '@/components/blog/BlogHeader'
 import BlogBody from '@/components/blog/BlogBody'
 import BlogFooter from '@/components/blog/BlogFooter'
 
+import 'prismjs/themes/prism-okaidia.css'
+
 interface BlogProp {
   blog: BlogInfo
 }
