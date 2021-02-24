@@ -3,30 +3,18 @@ import PageLayout from '@/layouts/page-layout'
 import { BlogInfo, getAllBlogs } from '@/libs/blog'
 import type { GetStaticPropsResult } from 'next'
 import Link from 'next/link'
-import { formatDate } from 'utils/formatter'
-import readingTime from 'reading-time'
+import BlogCard from '@/components/blog/BlogCard'
 
 interface BlogListProp {
   blogs: BlogInfo[]
 }
 
 const BlogIndex = ({ blogs }: BlogListProp): JSX.Element => {
-  console.log('Blog list', blogs)
   return (
     <PageLayout isFullHeight isHaveFooter isHaveMenu className="blog-layout">
-      {blogs.map(({ excerpt, timestamp, title, content, slug }: BlogInfo) => (
-        <Link href={`/blog/${slug}`} key={timestamp}>
-          <div className="blog-card">
-            <h1 className="text-gray-500 text-xs leading-normal mb-2">{title}</h1>
-            <p className="font-bold text-base">{excerpt}</p>
-            <div className="flex flex-row  items-center text-gray-400 pt-2">
-              <small>{formatDate(timestamp)}</small>
-              <small className="mx-2">-</small>
-              <small className="flex items-center">
-                {readingTime(content).text}.<span className="ml-2 text-xl">☕</span>
-              </small>
-            </div>
-          </div>
+      {blogs.map(({ slug, ...blog }: BlogInfo) => (
+        <Link href={`/blog/${slug}`} key={blog.timestamp}>
+          <BlogCard {...blog} />
         </Link>
       ))}
     </PageLayout>
