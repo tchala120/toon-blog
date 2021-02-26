@@ -27,13 +27,13 @@ export default function List({ img, name, status, url }: ListProp): JSX.Element 
       case Status.OFFINE:
         return (
           <div className="bg-gray-300 rounded-full px-4 py-2 my-4 text-gray-700 font-bold text-xs text-center">
-            Still in Development
+            Office
           </div>
         )
       case Status.ONLINE:
         return (
-          <div className="bg-gray-300 rounded-full px-4 py-2 my-4 text-gray-700 font-bold text-xs text-center">
-            Still in Development
+          <div className="bg-green-600 rounded-full px-4 py-2 my-4 text-white font-bold text-xs text-center">
+            Finished
           </div>
         )
     }
@@ -42,9 +42,11 @@ export default function List({ img, name, status, url }: ListProp): JSX.Element 
   return (
     <Link href={url}>
       <div className="bg-gray-100 shadow-2xl transform scale-100 hover:scale-105 p-8 rounded-xl flex flex-col justify-center items-center cursor-pointer transition-all duration-300">
-        <img src={img} alt={name} className="w-4/6" />
-        <h1 className="font-extrabold text-xl text-yellow-400 text-center">{name}</h1>
-        {renderStatusTag(status)}
+        <img src={img} alt={name} className="w-auto max-h-36" />
+        <div className="mt-4">
+          <h1 className="font-extrabold text-xl text-yellow-400 text-center">{name}</h1>
+          {renderStatusTag(status)}
+        </div>
       </div>
     </Link>
   )
