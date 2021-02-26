@@ -8,4 +8,11 @@ export const projects = [
     status: Status.NOT_FINISH,
     url: 'https://github.com/tchala120/discord_bot',
   },
+  {
+    id: 1,
+    img: '/assets/tcoin_icon.svg',
+    name: 'A Simple Tcoin',
+    status: Status.ONLINE,
+    url: 'https://github.com/tchala120/simple-blockchain',
+  },
 ]
