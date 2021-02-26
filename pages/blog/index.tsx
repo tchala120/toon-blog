@@ -2,7 +2,6 @@
 import PageLayout from '@/layouts/page-layout'
 import { BlogInfo, getAllBlogs } from '@/libs/blog'
 import type { GetStaticPropsResult } from 'next'
-import Link from 'next/link'
 import BlogCard from '@/components/blog/BlogCard'
 
 interface BlogListProp {
@@ -12,10 +11,8 @@ interface BlogListProp {
 const BlogIndex = ({ blogs }: BlogListProp): JSX.Element => {
   return (
     <PageLayout isFullHeight isHaveFooter isHaveMenu className="blog-layout">
-      {blogs.map(({ slug, ...blog }: BlogInfo) => (
-        <Link href={`/blog/${slug}`} key={blog.timestamp}>
-          <BlogCard {...blog} />
-        </Link>
+      {blogs.map((blog: BlogInfo) => (
+        <BlogCard {...blog} key={blog.slug} />
       ))}
     </PageLayout>
   )
