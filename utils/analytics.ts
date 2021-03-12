@@ -1,10 +1,7 @@
 import ReactGA from 'react-ga'
-import { config } from 'dotenv'
-
-config()
 
 export const initGA = (): void => {
-  ReactGA.initialize(process.env.GA)
+  ReactGA.initialize(process.env.GA_KEY)
 }
 export const logPageView = (): void => {
   ReactGA.set({ page: window.location.pathname })
