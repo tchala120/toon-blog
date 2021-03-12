@@ -1,7 +1,8 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useEffect } from 'react'
 import Header from '@/components/header/Header'
 import Menu from '@/components/menu/Menu'
 import Footer from '@/components/footer/Footer'
+import setupGA from 'utils/analytics'
 
 interface PageLayoutProp {
   children: ReactNode
@@ -18,6 +19,9 @@ export default function PageLayout({
   isHaveFooter = true,
   isFullHeight = true,
 }: PageLayoutProp): JSX.Element {
+  useEffect(() => {
+    setupGA()
+  })
   return (
     <div className={`flex flex-col ${isFullHeight ? `min-h-screen` : ``}`}>
       <Header title="Blog | Panupong Tipjoi" description="This page is show all blogs." />
