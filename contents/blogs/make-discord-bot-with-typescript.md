@@ -131,8 +131,8 @@ export class Bot {
     await this.listen()
   }
 
-  private async listen(): Promise<void | Message> {
-    this._client.on('message', (message: Message): void | Promise<Message> => {
+  private async listen() {
+    this._client.on('message', (message: Message) => {
       if (!message.content.startsWith('!') || message.author.bot) return
 
       const args = message.content.substring(PREFIX.length).trim().split(' ')
@@ -142,7 +142,7 @@ export class Bot {
         message.reply('Pong!')
       }
     })
-    await this._client.login(TOKEN)
+    this._client.login(TOKEN)
   }
 
   private ready(): void {
@@ -207,6 +207,16 @@ const args = message.content.substring(PREFIX.length).trim().split(' ')
 ต่อมาที่ตัวแปร commandName คือตัวคำสั่งของเรา โดยที่เราจะ args ตัวแรกเท่านั้น ตัวที่เหลือจะเป็น arguments เพิ่มเติมของแต่ละคำสั่ง
 
 ในบรรทัดที่ 7 จะเป็นตัว execute command ครับ เช็คง่ายๆ โดยเช็คว่า commandName ตรงกับ command ที่เราต้องการไหม (ในตัวอย่างเป็นคำสั่ง ping) ถ้าตรง จะทำการ reply message "Pong!" กลับไป
+
+```typescript
+...
+this._client.login(TOKEN)
+...
+```
+
+ต่อมาในส่วน login คือนำ TOKEN ที่เราเซ็ทไว้ใน .env มา login เพื่อใช้บอท.
+
+**แค่นี้ก็สามารถรันบอทได้แล้วครับ ง่ายนิดเดียว 😁**
 
 Code ทุกอย่างอยู่ใน [Github](https://github.com/tchala120/discord_bot) สามารถเข้าไปดูได้ครับ
 
