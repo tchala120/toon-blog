@@ -9,6 +9,7 @@ author:
   ogImage:
     url: '/assets/blog/introduction/cover-image.jpg'
   link: 'https://github.com/tchala120'
+  position: 'Intern Full Stack Developer at Krungsri Consumer'
 ---
 
 # **ก่อนจะทำอะไรเราก็ต้องแนะนำตัวกันก่อนใช่ไหมครับ ?**
