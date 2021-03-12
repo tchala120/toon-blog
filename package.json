@@ -27,6 +27,7 @@
   "dependencies": {
     "@babel/runtime": "7.0.0-beta.55",
     "@mapbox/rehype-prism": "^0.5.0",
+    "ant-design-vue": "^1.7.4",
     "classnames": "^2.2.6",
     "dayjs": "^1.10.4",
     "gray-matter": "^4.0.2",
@@ -57,6 +58,7 @@
     "@typescript-eslint/eslint-plugin": "^4.14.2",
     "@typescript-eslint/parser": "^4.14.2",
     "autoprefixer": "^10.2.4",
+    "babel-plugin-import": "^1.13.3",
     "eslint": "^7.19.0",
     "eslint-plugin-react": "^7.19.0",
     "husky": "^4.2.3",
