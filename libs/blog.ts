@@ -11,6 +11,7 @@ interface Author {
   picture: string
   ogImage: Url
   link: string
+  position: string
 }
 
 export interface BlogInfo {
