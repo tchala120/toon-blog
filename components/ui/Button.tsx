@@ -1,6 +1,6 @@
 import React from 'react'
 
-interface ButtonProp {
+interface ButtonProp extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   title: string
   icon?: string
   bg: string
