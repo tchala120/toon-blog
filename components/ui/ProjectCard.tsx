@@ -2,9 +2,9 @@ import React from 'react'
 import Link from 'next/link'
 
 export enum Status {
-  ONLINE = 'ONLINE',
-  OFFINE = 'OFFINE',
-  NOT_FINISH = 'NOT_FINISH',
+  ONLINE,
+  OFFINE,
+  NOT_FINISH,
 }
 
 interface ListProp {
