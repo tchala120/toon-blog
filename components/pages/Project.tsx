@@ -2,7 +2,7 @@ import React from 'react'
 
 import Template from './Template'
 
-import { Project, projects } from '@/constants/projects'
+import { IProject, projects } from '@/constants/projects'
 
 import List from '@/components/ui/List'
 
@@ -15,7 +15,7 @@ export default function Project(): JSX.Element {
         content="My whole project that i have done before and publish to everyone."
       />
       <div className="w-full mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8">
-        {projects.map((p: Project) => (
+        {projects.map((p: IProject) => (
           <List key={p.id} {...p} />
         ))}
       </div>

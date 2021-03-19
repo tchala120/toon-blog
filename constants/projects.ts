@@ -1,6 +1,6 @@
 import { Status } from '@/components/ui/List'
 
-export interface Project {
+export interface IProject {
   id: number
   img: string
   name: string
@@ -9,7 +9,7 @@ export interface Project {
   url: string
 }
 
-export const projects: Project[] = [
+export const projects: IProject[] = [
   {
     id: 0,
     img: 'https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/discord.svg',
