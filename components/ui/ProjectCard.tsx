@@ -11,11 +11,12 @@ interface ListProp {
   id: number
   img: string
   name: string
+  description: string
   status: Status
   url: string
 }
 
-export default function List({ img, name, status, url }: ListProp): JSX.Element {
+export default function ProjectCard({ img, name, status, url, description }: ListProp): JSX.Element {
   const renderStatusTag = (status: Status): JSX.Element => {
     switch (status) {
       case Status.NOT_FINISH:
@@ -45,6 +46,7 @@ export default function List({ img, name, status, url }: ListProp): JSX.Element 
         <img src={img} alt={name} className="w-auto max-h-36" />
         <div className="mt-4">
           <h1 className="font-extrabold text-xl text-yellow-400 text-center">{name}</h1>
+          <small className="text-gray-400 text-xs font-medium">{description}</small>
           {renderStatusTag(status)}
         </div>
       </div>
